@@ -207,16 +207,8 @@ public partial struct Vector3 : IEquatable<Vector3>, IFormattable
 
 #if NET8_0_OR_GREATER
     Vector256<double> result = value1.AsVector256();
-    result = Vector256.ConditionalSelect(
-      Vector256.GreaterThan(result, max.AsVector256()),
-      max.AsVector256(),
-      result
-    );
-    result = Vector256.ConditionalSelect(
-      Vector256.LessThan(result, min.AsVector256()),
-      min.AsVector256(),
-      result
-    );
+    result = Vector256.ConditionalSelect(Vector256.GreaterThan(result, max.AsVector256()), max.AsVector256(), result);
+    result = Vector256.ConditionalSelect(Vector256.LessThan(result, min.AsVector256()), min.AsVector256(), result);
     return result.AsVector3();
 #else
     double x = value1.X;

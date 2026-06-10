@@ -52,8 +52,7 @@ public static class ConversionExtensions
   /// <param name="value">The <see cref="Vector2"/> to convert.</param>
   /// <returns>A <see cref="Vector128{Double}"/> representation of the <see cref="Vector2"/>.</returns>
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static Vector128<double> AsVector128(this Vector2 value) =>
-    Unsafe.BitCast<Vector2, Vector128<double>>(value);
+  public static Vector128<double> AsVector128(this Vector2 value) => Unsafe.BitCast<Vector2, Vector128<double>>(value);
 
   /// <summary>
   /// Reinterprets a <see cref="Vector128{Double}"/> as a new <see cref="Vector2"/>.
@@ -61,8 +60,7 @@ public static class ConversionExtensions
   /// <param name="value">The <see cref="Vector128{Double}"/> to convert.</param>
   /// <returns>A <see cref="Vector2"/> representation of the <see cref="Vector128{Double}"/>.</returns>
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static Vector2 AsVector2(this Vector128<double> value) =>
-    Unsafe.BitCast<Vector128<double>, Vector2>(value);
+  public static Vector2 AsVector2(this Vector128<double> value) => Unsafe.BitCast<Vector128<double>, Vector2>(value);
 
   /// <summary>
   /// Reinterprets a <see cref="Vector2"/> as a new <see cref="Vector3"/> with the new element zeroed.
@@ -86,8 +84,7 @@ public static class ConversionExtensions
   /// <param name="value">The <see cref="Vector2"/> to convert.</param>
   /// <returns>A <see cref="Vector256{Double}"/> representation of the <see cref="Vector2"/>.</returns>
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static Vector256<double> AsVector256(this Vector2 value) =>
-    Vector256.Create(value.X, value.Y, 0.0, 0.0);
+  public static Vector256<double> AsVector256(this Vector2 value) => Vector256.Create(value.X, value.Y, 0.0, 0.0);
 
   /// <summary>
   /// Reinterprets a <see cref="Vector3"/> as a new <see cref="Vector2"/>.
@@ -111,8 +108,7 @@ public static class ConversionExtensions
   /// <param name="value">The <see cref="Vector3"/> to convert.</param>
   /// <returns>A <see cref="Vector256{Double}"/> representation of the <see cref="Vector3"/>.</returns>
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static Vector256<double> AsVector256(this Vector3 value) =>
-    Vector256.Create(value.X, value.Y, value.Z, 0.0);
+  public static Vector256<double> AsVector256(this Vector3 value) => Vector256.Create(value.X, value.Y, value.Z, 0.0);
 
   /// <summary>
   /// Reinterprets a <see cref="Vector4"/> as a new <see cref="Quaternion"/>.
